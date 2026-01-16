@@ -1,4 +1,5 @@
 # 🎱 Plinko Lab — Provably Fair Game
+LIVE DEMO  = https://plinko-lab-provably-fair-game-nypd.vercel.app/
 
 
 > A fully-featured, cryptographically fair Plinko game built for Daphnis Labs Full-Stack Developer Intern assignment.
@@ -9,7 +10,7 @@
 
 ```bash
 # Clone & Install
-git clone https://github.com/yourusername/plinko-game.git
+git clone [https://github.com/yourusername/plinko-game.git](https://github.com/mevirajsheoran/Plinko-Lab-Provably-Fair-Game)
 cd plinko-game
 npm install
 
@@ -240,12 +241,9 @@ npm run db:studio        # Open Prisma Studio
 
 ### AI Usage Transparency
 This project used AI assistance (~30% of code):
-- **PRNG implementation** - Core algorithm structure
+like
 - **Canvas animations** - Animation loop patterns
-- **API routing** - Error handling patterns
-- **Database schema** - Initial model design
 
-**Manually implemented:** Easter eggs, accessibility, sound design, verification UX.
 
 ### Future Enhancements
 **High Priority:**
@@ -266,7 +264,7 @@ This project used AI assistance (~30% of code):
 - **Name:** [Viraj Sheoran]
 - **Email:** [virajsheoran@gmail.com]
 - **GitHub:** [https://github.com/mevirajsheoran]
-- **Live Demo:** [plinko-game-demo.vercel.app](https://plinko-game-demo.vercel.app)
+- **Live Demo:** [plinko-game-demo.vercel.app]([https://plinko-game-demo.vercel.app](https://plinko-lab-provably-fair-game-nypd.vercel.app/))
 
 ## Key Improvements Made:
  
