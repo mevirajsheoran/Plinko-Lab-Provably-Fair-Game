@@ -4,6 +4,7 @@ import { prisma } from '@/lib/prisma';
 import { generateCombinedSeed } from '@/lib/crypto';
 import { runGame } from '@/lib/engine';
 import { ROWS } from '@/lib/constants';
+import { Prisma } from '@prisma/client';
 
 export async function POST(
   request: NextRequest,
@@ -35,7 +36,6 @@ export async function POST(
       );
     }
 
-    // Get the round
     const round = await prisma.round.findUnique({
       where: { id: params.id },
     });
@@ -58,7 +58,6 @@ export async function POST(
       );
     }
 
-    // Run the game
     const combinedSeed = generateCombinedSeed(
       round.serverSeed,
       clientSeed,
@@ -72,6 +71,10 @@ export async function POST(
       dropColumn
     );
 
+    // Convert path to Prisma-compatible JSON
+    // Option 1: Cast to Prisma.InputJsonValue
+    const pathData = result.path as unknown as Prisma.InputJsonValue;
+
     // Update round in database
     const updatedRound = await prisma.round.update({
       where: { id: params.id },
@@ -84,7 +87,7 @@ export async function POST(
         binIndex: result.binIndex,
         payoutMultiplier: result.payoutMultiplier,
         betCents,
-        pathJson: result.path,
+        pathJson: pathData,
       },
     });
 
